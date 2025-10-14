@@ -1,12 +1,13 @@
 ## Donderdag
 
-* Hallo
+- project aangemaakt
+- project op github gezet
 
 ## Maandag 13-10-2025
 
-* ERD gemaakt
-* Planning gemaakt
-* User stories gemaakt
+- ERD gemaakt
+- Planning gemaakt
+- User stories gemaakt
 
 ## Dinsdag 14-10-2025
 
