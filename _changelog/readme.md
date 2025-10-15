@@ -11,4 +11,11 @@
 
 ## Dinsdag 14-10-2025
 
-* Change log aangemaakt. 
+- Change log aangemaakt.
+- plant pagina, route en view aangemaakt.
+
+## Woensdag 15-10-2025
+
+- database plants toegevoegd
+- database catogories toegevoegd
+- users aangepast met admin key
