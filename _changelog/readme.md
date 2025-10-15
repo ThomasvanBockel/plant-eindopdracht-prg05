@@ -9,6 +9,8 @@
 - Planning gemaakt
 - User stories gemaakt
 
+![ERD](./img/ERD.png)
+
 ## Dinsdag 14-10-2025
 
 - Change log aangemaakt.
