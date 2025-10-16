@@ -21,3 +21,8 @@
 - database plants toegevoegd
 - database catogories toegevoegd
 - users aangepast met admin key
+- plants model aanmaken
+
+## Donderdag 16-10-2025
+
+- details pagina aanmaken en werkend maken

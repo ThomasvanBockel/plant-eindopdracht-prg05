@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Plants;
+use App\Models\Plant;
 use Illuminate\Http\Request;
 
 class PlantController extends Controller
@@ -12,13 +12,13 @@ class PlantController extends Controller
     //
     public function index()
     {
-        $plants = Plants::all();
+        $plants = Plant::all();
         return view('plants', compact('plants'));
     }
 
     public function show($id)
     {
-        $plants = Plants::find($id);
+        $plants = Plant::find($id);
         return view('details', compact('plants'));
     }
 }
