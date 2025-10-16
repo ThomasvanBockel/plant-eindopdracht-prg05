@@ -8,6 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
 Route::get('plants', [PlantController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('plants');
@@ -15,12 +16,15 @@ Route::get('plants', [PlantController::class, 'index'])
 Route::get('/details/{plant}', [PlantController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('plants.show');
+*/
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+Route::resource('plant', PlantController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

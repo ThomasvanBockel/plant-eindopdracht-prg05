@@ -9,8 +9,9 @@
             <div class="p-10">
                 <p class="text-white">{{ $plant->name }}</p>
                 <p class="text-white">{{$plant->description}}</p>
-                <a href="/details/{{$plant->id}}"
-                   class="text-gray-400 hover:text-red-500 transition duration-1000 ease-in-out">about</a>
+                <a href="plant/{{$plant->id}}">
+                    <x-secondary-button class="text-gray-600"> Back</x-secondary-button>
+                </a>
 
             </div>
         @endforeach
