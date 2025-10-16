@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Plant;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Location;
 
 class PlantController extends Controller
 {
@@ -16,9 +17,19 @@ class PlantController extends Controller
         return view('plants', compact('plants'));
     }
 
-    public function show($id)
+    public function show(Plant $plant)
     {
-        $plants = Plant::find($id);
-        return view('details', compact('plants'));
+        return view('details', compact('plant'));
+
+    }
+
+    public function create()
+    {
+
+    }
+
+    public function store()
+    {
+
     }
 }

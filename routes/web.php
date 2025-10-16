@@ -9,9 +9,11 @@ Route::get('/', function () {
 });
 
 Route::get('plants', [PlantController::class, 'index'])
+    ->middleware(['auth', 'verified'])
     ->name('plants');
 
-Route::get('/details/{id}', [PlantController::class, 'show'])
+Route::get('/details/{plant}', [PlantController::class, 'show'])
+    ->middleware(['auth', 'verified'])
     ->name('plants.show');
 
 Route::get('/dashboard', function () {
