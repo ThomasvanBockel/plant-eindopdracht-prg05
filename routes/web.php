@@ -11,6 +11,9 @@ Route::get('/', function () {
 Route::get('plants', [PlantController::class, 'index'])
     ->name('plants');
 
+Route::get('/details/{id}', [PlantController::class, 'show'])
+    ->name('plants.show');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })
