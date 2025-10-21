@@ -17,6 +17,10 @@ Route::get('/details/{plant}', [PlantController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('plants.show');
 */
+Route::get('/admin', function () {
+    return view('admin');
+})
+    ->name('admin');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

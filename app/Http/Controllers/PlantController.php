@@ -22,10 +22,9 @@ class PlantController extends Controller
 
     public function show(Plant $plant)
     {
-        $categories = Category::find($plant->category_id);
+
         return view('show',
-            compact('plant'),
-            compact('categories'));
+            compact('plant'));
 
     }
 

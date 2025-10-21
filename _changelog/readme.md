@@ -26,3 +26,9 @@
 ## Donderdag 16-10-2025
 
 - details pagina aanmaken en werkend maken
+
+## Dinsdag 21-10-2025
+
+- admin page gemaakt
+- route admin page gemaakt
+- database bijgewerkt 

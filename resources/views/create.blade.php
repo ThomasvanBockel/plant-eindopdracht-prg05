@@ -26,6 +26,9 @@
         </div>
 
         <div>
+            <a href="{{route('plant.index')}}">
+                <x-secondary-button class="text-gray-600"> Back</x-secondary-button>
+            </a>
             <x-primary-button class="text-white" type="submit" name="submit" value="Create">
                 Create
             </x-primary-button>
