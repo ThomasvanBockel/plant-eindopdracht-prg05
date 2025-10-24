@@ -33,4 +33,9 @@
     - op dit moment aleen een pagina met niks erop
 - route admin page gemaakt
     - alleen iemand met de admin mogelijkheid kan naar de admin page
-- database bijgewerkt 
+- database bijgewerkt
+
+## Donderdag 24-10-2025
+
+- admin functionaliteit proberen toe te voegen doormiddel van een checkbox (niet gelikt)
+- filter knoppen toegevoegd
