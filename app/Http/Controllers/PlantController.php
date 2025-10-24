@@ -13,11 +13,21 @@ class PlantController extends Controller
 
 
     //
-    public function index()
+    public function index(Request $request)
     {
-        $plants = Plant::all();
-        return view('plants',
-            compact('plants'));
+        $query = Plant::query();
+
+
+        if ($request->filled('category')) {
+            $query->whereHas('category', function ($q) use ($request) {
+                $q->where('name', $request->category);
+            });
+        }
+
+
+        $plants = $query->get();
+
+        return view('plants', compact('plants'));
     }
 
     public function show(Plant $plant)
@@ -53,4 +63,25 @@ class PlantController extends Controller
 
         return redirect()->route('plant.index');
     }
+
+    public function admin()
+    {
+        $plants = Plant::all();
+        return view('/admin',
+            compact('plants'));
+
+    }
+    /*
+        public function toggle(Request $request, Plant $plant)
+        {
+            $data = $request->validate([
+                'active' => 'boolean',
+            ]);
+
+            $plant->update(['active' => $data['active']]);
+
+            return back()->with('status', 'Plant status updated!');
+        }
+
+    */
 }

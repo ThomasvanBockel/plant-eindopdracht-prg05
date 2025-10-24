@@ -17,11 +17,15 @@ Route::get('/details/{plant}', [PlantController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('plants.show');
 */
-Route::get('/admin', function () {
-    return view('admin');
-})
+
+Route::get('/admin}', [PlantController::class, 'admin'])
+    ->middleware(['auth'])
     ->name('admin');
 
+/*
+Route::put('/plants/{plant}/toggle', [PlantController::class, 'toggle'])
+    ->name('plants.toggle');
+*/
 Route::get('/dashboard', function () {
     return view('dashboard');
 })

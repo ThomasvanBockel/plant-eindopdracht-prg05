@@ -30,5 +30,7 @@
 ## Dinsdag 21-10-2025
 
 - admin page gemaakt
+    - op dit moment aleen een pagina met niks erop
 - route admin page gemaakt
+    - alleen iemand met de admin mogelijkheid kan naar de admin page
 - database bijgewerkt 
