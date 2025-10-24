@@ -16,22 +16,26 @@
         </x-slot>
         <div>
             <x-slot name="content">
+                <div @click.stop>
+                    <form method="GET" action="">
+
+                        <input type="text" name="search" id="search" placeholder="Voer de naam in">
+                        <x-secondary-button type="submit">Zoeken</x-secondary-button>
+                    </form>
+                </div>
                 <form method="GET" action="">
                     <x-secondary-button type="submit" name="category" value="">
-                        alle
+                        Alle planten
                     </x-secondary-button>
                 </form>
+                @foreach ($categories as $category)
+                    <form method="GET" action="">
+                        <x-secondary-button type="submit" name="category" value="{{$category->name}}">
+                            {{$category->name}}
+                        </x-secondary-button>
+                    </form>
+                @endforeach
 
-                <form method="GET" action="">
-                    <x-secondary-button type="submit" name="category" value="Vetplant">
-                        vetplant
-                    </x-secondary-button>
-                </form>
-                <form method="GET" action="">
-                    <x-secondary-button type="submit" name="category" value="Ficus">
-                        ficus
-                    </x-secondary-button>
-                </form>
             </x-slot>
         </div>
     </x-dropdown>

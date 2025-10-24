@@ -39,3 +39,5 @@
 
 - admin functionaliteit proberen toe te voegen doormiddel van een checkbox (niet gelikt)
 - filter knoppen toegevoegd
+- dropdown menu
+- zoek balk toegevoegd.

@@ -16,18 +16,21 @@ class PlantController extends Controller
     public function index(Request $request)
     {
         $query = Plant::query();
-
+        $categories = Category::all();
 
         if ($request->filled('category')) {
             $query->whereHas('category', function ($q) use ($request) {
                 $q->where('name', $request->category);
             });
         }
-
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where('name', 'like', '%' . $search . '%');
+        }
 
         $plants = $query->get();
 
-        return view('plants', compact('plants'));
+        return view('plants', compact('plants', 'categories'));
     }
 
     public function show(Plant $plant)
