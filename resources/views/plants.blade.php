@@ -1,44 +1,48 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <h2 class="text-white">Plant</h2>
-        <a href="{{route('plant.create')}}">
-            <x-secondary-button class=" dark:bg-green-900 dark:hover:bg-green-700"> Create</x-secondary-button>
-        </a>
+        <div class="flex flex-row">
+            <div class="pr-16">
+                <x-dropdown align="left" width="70%">
+                    <x-slot name="trigger">
+                        <x-secondary-button>
+                            Filter
+                        </x-secondary-button>
+                    </x-slot>
+                    <div>
+                        <x-slot name="content">
+                            <div @click.stop>
+                                <form method="GET" action="">
+                                    <input type="text" name="search" id="search" placeholder="Voer de naam in">
+                                    <x-secondary-button type="submit">Zoeken</x-secondary-button>
+                                </form>
+                            </div>
+                            <form method="GET" action="">
+                                <x-secondary-button type="submit" name="category" value="">
+                                    Alle planten
+                                </x-secondary-button>
+                            </form>
+                            @foreach ($categories as $category)
+                                <form method="GET" action="">
+                                    <x-secondary-button type="submit" name="category" value="{{$category->name}}">
+                                        {{$category->name}}
+                                    </x-secondary-button>
+                                </form>
+                            @endforeach
+
+                        </x-slot>
+                    </div>
+                </x-dropdown>
+            </div>
+            <div>
+                <a href="{{route('plant.create')}}">
+                    <x-secondary-button class=" dark:bg-green-900 dark:hover:bg-green-700"> Create</x-secondary-button>
+                </a>
+            </div>
+        </div>
     </x-slot>
 
 
-    <x-dropdown align="left" width="100">
-        <x-slot name="trigger">
-            <x-secondary-button>
-                Categories
-            </x-secondary-button>
-        </x-slot>
-        <div>
-            <x-slot name="content">
-                <div @click.stop>
-                    <form method="GET" action="">
-
-                        <input type="text" name="search" id="search" placeholder="Voer de naam in">
-                        <x-secondary-button type="submit">Zoeken</x-secondary-button>
-                    </form>
-                </div>
-                <form method="GET" action="">
-                    <x-secondary-button type="submit" name="category" value="">
-                        Alle planten
-                    </x-secondary-button>
-                </form>
-                @foreach ($categories as $category)
-                    <form method="GET" action="">
-                        <x-secondary-button type="submit" name="category" value="{{$category->name}}">
-                            {{$category->name}}
-                        </x-secondary-button>
-                    </form>
-                @endforeach
-
-            </x-slot>
-        </div>
-    </x-dropdown>
     <div class="flex  flex-col items-center ">
         @if($plants)
             @foreach ($plants as $plant)
