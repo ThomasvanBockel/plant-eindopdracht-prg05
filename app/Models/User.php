@@ -47,8 +47,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function isAdmin(): Boolean
-    {
-        return $this->is_admin;
-    }
+//    public function isAdmin(): Boolean
+//    {
+//        return $this->is_admin;
+//    }
 }
