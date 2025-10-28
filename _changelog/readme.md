@@ -45,3 +45,8 @@
 ## Maandag 27-10-2025
 
 - admin page afgemaakt.
+
+## Dinsdag 18-10-2025
+
+- admin route afgemaakt, alleen de admin kan nu naar de admin pagina.
+- delete pagina gemaakt, delete is een soft delete.

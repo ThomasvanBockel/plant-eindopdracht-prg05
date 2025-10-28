@@ -9,6 +9,14 @@
             <a href="{{route('plant.index')}}">
                 <x-secondary-button class="text-gray-600"> Back</x-secondary-button>
             </a>
+
+            <form action="{{route('plant.destroy', $plant->id)}}" method="post">
+                @csrf
+                @method('DELETE')
+                <x-secondary-button type="submit"
+                                    class="text-red-700"> delete
+                </x-secondary-button>
+            </form>
         </div>
 
     </x-slot>

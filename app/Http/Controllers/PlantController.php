@@ -49,6 +49,14 @@ class PlantController extends Controller
 
     }
 
+    public function destroy(Plant $plant)
+    {
+        $plant->delete();
+
+        return redirect()
+            ->route('plant.index');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
