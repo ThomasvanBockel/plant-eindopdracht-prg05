@@ -12,12 +12,13 @@
                     <x-nav-link :href="route('plant.index')" :active="request()->routeIs('plant.index')">
                         {{ __('Plants') }}
                     </x-nav-link>
-
-                    @if( auth()->user()->is_admin  === 1)
-                        <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
-                            {{ __('Admin') }}
-                        </x-nav-link>
-                    @endif
+                    @auth
+                        @if( auth()->user()->is_admin  === 1)
+                            <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
+                                {{ __('Admin') }}
+                            </x-nav-link>
+                        @endif
+                    @endauth
                 </div>
             </div>
 
@@ -67,7 +68,8 @@
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
                               stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                               d="M4 6h16M4 12h16M4 18h16"/>
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden"
+                              stroke-linecap="round"
                               stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>

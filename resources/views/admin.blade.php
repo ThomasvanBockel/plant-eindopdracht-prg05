@@ -5,19 +5,22 @@
             <p class="text-white">{{$plant->description}}</p>
             <p class="text-white">the category is: {{$plant->category->name}}</p>
 
-            {{--            <form action="{{ route('plants.toggle',  $plant->id) }}" method="POST">--}}
-            {{--                @csrf--}}
-            {{--                @method('PUT')--}}
-            {{--            <input type="hidden" name="active" value="0">--}}
-            <input
-                type="checkbox"
-                name="active"
-                id="active"
-                {{--                value="1"--}}
-                {{--                {{ $plant->active ? 'checked' : '' }}--}}
-                {{--                onchange="this.form.submit()"--}}
-            />
-            {{--               </form>--}}
+
+            <form action="{{route('plants.toggle', $plant)}}" method="POST">
+                @csrf
+                @method('PUT')
+                <input
+                    onchange="this.form.submit()"
+                    type="checkbox"
+                    name="active"
+                    value="{{$plant->active}}"
+                    id="active"
+                    @if($plant->active == 1)
+                        checked
+                    @endif
+                >
+
+            </form>
         </div>
     @endforeach
 </x-app-layout>

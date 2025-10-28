@@ -1,5 +1,6 @@
 <?php
 
+use  App\Http\Controllers\AdminController;
 use App\Http\Controllers\PlantController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -18,26 +19,28 @@ Route::get('/details/{plant}', [PlantController::class, 'show'])
     ->name('plants.show');
 */
 
-Route::get('/admin}', [PlantController::class, 'admin'])
+Route::get('/admin', [AdminController::class, 'admin'])
     ->middleware(['auth'])
     ->name('admin');
 
-/*
-Route::put('/plants/{plant}/toggle', [PlantController::class, 'toggle'])
+
+Route::put('/plants/{plant}/toggle', [AdminController::class, 'toggle'])
     ->name('plants.toggle');
-*/
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::resource('plant', PlantController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('plant', PlantController::class)
+        ->withoutMiddlewareFor('index', 'auth');
 });
 
 require __DIR__ . '/auth.php';

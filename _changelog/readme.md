@@ -41,3 +41,7 @@
 - filter knoppen toegevoegd
 - dropdown menu
 - zoek balk toegevoegd.
+
+## Maandag 27-10-2025
+
+- admin page afgemaakt.

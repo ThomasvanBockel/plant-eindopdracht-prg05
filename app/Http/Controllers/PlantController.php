@@ -67,24 +67,5 @@ class PlantController extends Controller
         return redirect()->route('plant.index');
     }
 
-    public function admin()
-    {
-        $plants = Plant::all();
-        return view('/admin',
-            compact('plants'));
 
-    }
-    /*
-        public function toggle(Request $request, Plant $plant)
-        {
-            $data = $request->validate([
-                'active' => 'boolean',
-            ]);
-
-            $plant->update(['active' => $data['active']]);
-
-            return back()->with('status', 'Plant status updated!');
-        }
-
-    */
 }
