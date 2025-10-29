@@ -1,31 +1,22 @@
-## Donderdag
+## Woendsag 29-10-2025
 
-- project aangemaakt
-- project op github gezet
+- Edit page aangemaakt en functioneel gemaakt.
 
-## Maandag 13-10-2025
+## Dinsdag 28-10-2025
 
-- ERD gemaakt
-- Planning gemaakt
-- User stories gemaakt
+- admin route afgemaakt, alleen de admin kan nu naar de admin pagina.
+- delete pagina gemaakt, delete is een soft delete.
 
-![ERD](./img/ERD.png)
+## Maandag 27-10-2025
 
-## Dinsdag 14-10-2025
+- admin page afgemaakt.
 
-- Change log aangemaakt.
-- plant pagina, route en view aangemaakt.
+## Donderdag 24-10-2025
 
-## Woensdag 15-10-2025
-
-- database plants toegevoegd
-- database catogories toegevoegd
-- users aangepast met admin key
-- plants model aanmaken
-
-## Donderdag 16-10-2025
-
-- details pagina aanmaken en werkend maken
+- admin functionaliteit proberen toe te voegen doormiddel van een checkbox (niet gelikt)
+- filter knoppen toegevoegd
+- dropdown menu
+- zoek balk toegevoegd.
 
 ## Dinsdag 21-10-2025
 
@@ -35,18 +26,31 @@
     - alleen iemand met de admin mogelijkheid kan naar de admin page
 - database bijgewerkt
 
-## Donderdag 24-10-2025
+## Donderdag 16-10-2025
 
-- admin functionaliteit proberen toe te voegen doormiddel van een checkbox (niet gelikt)
-- filter knoppen toegevoegd
-- dropdown menu
-- zoek balk toegevoegd.
+- details pagina aanmaken en werkend maken
 
-## Maandag 27-10-2025
+## Woensdag 15-10-2025
 
-- admin page afgemaakt.
+- database plants toegevoegd
+- database catogories toegevoegd
+- users aangepast met admin key
+- plants model aanmaken
 
-## Dinsdag 18-10-2025
+## Dinsdag 14-10-2025
 
-- admin route afgemaakt, alleen de admin kan nu naar de admin pagina.
-- delete pagina gemaakt, delete is een soft delete.
+- Change log aangemaakt.
+- plant pagina, route en view aangemaakt.
+
+## Maandag 13-10-2025
+
+- ERD gemaakt
+- Planning gemaakt
+- User stories gemaakt
+
+![ERD](./img/ERD.png)
+
+## Donderdag 9-10-2025
+
+- project aangemaakt
+- project op github gezet

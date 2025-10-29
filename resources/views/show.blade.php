@@ -17,6 +17,12 @@
                                     class="text-red-700"> delete
                 </x-secondary-button>
             </form>
+            <form action="{{route('plant.edit', $plant->id)}}" method="get">
+                @csrf
+                <x-secondary-button type="submit"
+                                    class="text-blue-800"> Edit
+                </x-secondary-button>
+            </form>
         </div>
 
     </x-slot>

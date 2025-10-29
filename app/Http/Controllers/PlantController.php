@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Plant;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Location;
 
@@ -25,7 +26,8 @@ class PlantController extends Controller
         }
         if ($request->filled('search')) {
             $search = $request->search;
-            $query->where('name', 'like', '%' . $search . '%');
+            $query->where('name', 'like', '%' . $search . '%')
+                ->orWhere('description', 'like', '%' . $search . '%');
         }
 
         $plants = $query->get();
@@ -49,6 +51,14 @@ class PlantController extends Controller
 
     }
 
+    public function edit(Plant $plant)
+    {
+        $categories = Category::all();
+        return view('edit',
+            compact('categories', 'plant'));
+
+    }
+
     public function destroy(Plant $plant)
     {
         $plant->delete();
@@ -69,11 +79,32 @@ class PlantController extends Controller
         $plant->description = $request->input('description');
         $plant->user_id = Auth::id();
         $plant->category_id = $request->input('category_id');
-
         $plant->save();
 
         return redirect()->route('plant.index');
     }
 
+    public function update(Request $request, Plant $plant)
+    {
+
+
+        if (Auth::id() !== $plant->user_id) {
+            abort(route('plant.index'));
+        }
+        $request->validate([
+            'name' => 'required|max:100',
+            'description' => 'required'
+        ]);
+
+
+        $plant->name = $request->input('name');
+        $plant->description = $request->input('description');
+        $plant->user_id = Auth::id();
+        $plant->category_id = $request->input('category_id');
+        $plant->active = false;
+        $plant->save();
+
+        return redirect()->route('plant.index');
+    }
 
 }
