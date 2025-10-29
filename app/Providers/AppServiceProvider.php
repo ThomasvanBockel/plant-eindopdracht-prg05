@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Plant;
+
+//use Illuminate\Auth\Access\Gate;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +24,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Gate::define('edit-check', function (User $user, Plant $plant) {
+            return $plant->user->is($user);
+        });
+        
+        Gate::define('delete-check', function (User $user, Plant $plant) {
+            return $plant->user->is($user);
+        });
     }
 }

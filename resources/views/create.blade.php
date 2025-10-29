@@ -17,12 +17,16 @@
         </div>
 
         <div>
-            <label class="text-white" for="category_id">Category</label>
-            <select name="category_id" id="">
+            <label class="text-white" for="category">Category</label>
+            <select name="category" id="">
+                <option value="" selected disabled>Geen geselecteerd</option>
                 @foreach($categories as $category)
                     <option value="{{$category->id}}"> {{$category->name}}</option>
                 @endforeach
             </select>
+            @error('category')
+            <div class="alert alert-danger text-red-600">{{$message}}</div>
+            @enderror
         </div>
 
         <div>

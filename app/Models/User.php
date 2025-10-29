@@ -51,4 +51,9 @@ class User extends Authenticatable
 //    {
 //        return $this->is_admin;
 //    }
+
+    public function plants()
+    {
+        return $this->hasMany(Plant::class);
+    }
 }

@@ -34,10 +34,18 @@
                     </div>
                 </x-dropdown>
             </div>
-            <div>
+            <div class="pr-16">
                 <a href="{{route('plant.create')}}">
                     <x-secondary-button class=" dark:bg-green-900 dark:hover:bg-green-700"> Create</x-secondary-button>
                 </a>
+            </div>
+            <div>
+                @if($validation > 3)
+                    <a href="{{route('myPlants')}}">
+                        <x-secondary-button class=" dark:bg-green-900 dark:hover:bg-green-700"> mijn planten
+                        </x-secondary-button>
+                    </a>
+                @endif
             </div>
         </div>
     </x-slot>

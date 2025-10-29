@@ -19,6 +19,6 @@ class AdminController extends Controller
 
         $plant->active = !$plant->active;
         $plant->save();
-        return redirect()->route('plant.index');
+        return redirect()->route('admin');
     }
 }

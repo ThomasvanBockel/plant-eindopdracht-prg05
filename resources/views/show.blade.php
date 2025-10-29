@@ -9,20 +9,20 @@
             <a href="{{route('plant.index')}}">
                 <x-secondary-button class="text-gray-600"> Back</x-secondary-button>
             </a>
-
-            <form action="{{route('plant.destroy', $plant->id)}}" method="post">
-                @csrf
-                @method('DELETE')
-                <x-secondary-button type="submit"
-                                    class="text-red-700"> delete
-                </x-secondary-button>
-            </form>
-            <form action="{{route('plant.edit', $plant->id)}}" method="get">
-                @csrf
-                <x-secondary-button type="submit"
-                                    class="text-blue-800"> Edit
-                </x-secondary-button>
-            </form>
+            @if($plant->user_id === Auth::id() )
+                <form action="{{route('plant.destroy', $plant->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <x-secondary-button type="submit"
+                                        class="dark:bg-red-700"> delete
+                    </x-secondary-button>
+                </form>
+                <form action="{{route('plant.edit', $plant->id)}}" method="get">
+                    @csrf
+                    <x-secondary-button type="submit" class="dark:bg-blue-800"> Edit
+                    </x-secondary-button>
+                </form>
+            @endif
         </div>
 
     </x-slot>

@@ -21,7 +21,10 @@
             <label class="text-white" for="category_id">Category</label>
             <select name="category_id" id="">
                 @foreach($categories as $category)
-                    <option value="{{$category->id}}"> {{$category->name}}</option>
+                    <option @if($plant->category->name === $category->name)
+                                selected
+                            @endif
+                            value="{{$category->id}}"> {{$category->name}}</option>
                 @endforeach
             </select>
         </div>

@@ -1,6 +1,12 @@
 ## Woendsag 29-10-2025
 
 - Edit page aangemaakt en functioneel gemaakt.
+- website styling veranderd naar groen, en styling show en delete knoppen
+- deep validation toegevoegd
+    - myPlants toegevoegd
+    - validatie toegevoegd
+    - link toegevoegd
+    - route toegevoegd
 
 ## Dinsdag 28-10-2025
 
