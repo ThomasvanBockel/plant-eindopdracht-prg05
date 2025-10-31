@@ -1,3 +1,10 @@
+## Vrijdag 31-10-2025
+
+- CSS toegevoed voor de main pagina
+- Main pagina database connectie toegevoegd
+- Admin page correct gemaakt volgens eisen.
+    - geen put meer gebruiken maar post.
+
 ## Woendsag 29-10-2025
 
 - Edit page aangemaakt en functioneel gemaakt.
@@ -60,3 +67,4 @@
 
 - project aangemaakt
 - project op github gezet
+

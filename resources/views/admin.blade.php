@@ -8,13 +8,17 @@
 
             <form action="{{route('plants.toggle', $plant)}}" method="POST">
                 @csrf
-                @method('PUT')
+                <label class="text-white" for="active">Active</label>
+
+
+                <input type="hidden" name="active" value="0">
+
                 <label class="text-white" for="active">active</label>
                 <input
                     onchange="this.form.submit()"
                     type="checkbox"
                     name="active"
-                    value="{{$plant->active}}"
+                    value="1"
                     id="active"
                     @if($plant->active == 1)
                         checked

@@ -35,10 +35,18 @@ class PlantController extends Controller
 
     }
 
+    public function welcome()
+    {
+        $plants = Plant::where('active', 1)
+            ->get();
+
+        return view('welcome', compact('plants'));
+    }
+
     //
     public function index(Request $request)
     {
-        $query = Plant::query();
+        $query = Plant::where('active', 1);
         $categories = Category::all();
 
         $validation = Plant::with('user')
@@ -48,13 +56,15 @@ class PlantController extends Controller
 
         if ($request->filled('category')) {
             $query->whereHas('category', function ($q) use ($request) {
-                $q->where('name', $request->category);
+                $q->where('name', $request->category)
+                    ->where('active', 1);
             });
         }
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where('name', 'like', '%' . $search . '%')
-                ->orWhere('description', 'like', '%' . $search . '%');
+                ->orWhere('description', 'like', '%' . $search . '%')
+                ->where('active', 1);
         }
 
         $plants = $query->get();
