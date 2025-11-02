@@ -61,10 +61,10 @@ class PlantController extends Controller
             });
         }
         if ($request->filled('search')) {
-            $search = $request->search;
-            $query->where('name', 'like', '%' . $search . '%')
-                ->orWhere('description', 'like', '%' . $search . '%')
-                ->where('active', 1);
+            $query->where(function ($q) use ($request) {
+                $q->where('name', 'like', '%' . $request->search . '%')
+                    ->orWhere('description', 'like', '%' . $request->search . '%');
+            });
         }
 
         $plants = $query->get();

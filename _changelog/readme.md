@@ -1,6 +1,7 @@
 ## Zondag 2-11-2025
 
 - Style voor edit en create en edit pagina.
+- gemaakt dat er nu een categorie en een naam/ beschrijving tegelijker tijd ingevoerd kan worden.
 
 ## Vrijdag 31-10-2025
 

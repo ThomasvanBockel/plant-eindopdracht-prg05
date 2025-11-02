@@ -3,7 +3,7 @@
     <x-slot name="header">
         <div class="flex flex-row">
             <div class="pr-16">
-                <x-dropdown align="left" width="70%">
+                <x-dropdown align="left" width="10%">
                     <x-slot name="trigger">
                         <x-secondary-button>
                             Filter
@@ -15,19 +15,17 @@
                                 <form method="GET" action="">
                                     <input type="text" name="search" id="search" placeholder="Voer de naam in">
                                     <x-secondary-button type="submit">Zoeken</x-secondary-button>
-                                </form>
                             </div>
-                            <form method="GET" action="">
-                                <x-secondary-button type="submit" name="category" value="">
-                                    Alle planten
-                                </x-secondary-button>
-                            </form>
+
+                            <x-secondary-button type="submit" name="category" value="{{ request('search') }}">
+                                Alle planten
+                            </x-secondary-button>
+
                             @foreach ($categories as $category)
-                                <form method="GET" action="">
-                                    <x-secondary-button type="submit" name="category" value="{{$category->name}}">
-                                        {{$category->name}}
-                                    </x-secondary-button>
-                                </form>
+                                <x-secondary-button type="submit" name="category" value="{{$category->name}}">
+                                    {{$category->name}}
+                                </x-secondary-button>
+                              
                             @endforeach
 
                         </x-slot>
