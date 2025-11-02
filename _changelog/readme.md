@@ -1,3 +1,7 @@
+## Zondag 2-11-2025
+
+- Style voor edit en create en edit pagina.
+
 ## Vrijdag 31-10-2025
 
 - CSS toegevoed voor de main pagina
@@ -22,7 +26,8 @@
 
 ## Maandag 27-10-2025
 
-- admin page afgemaakt.
+- admin page functionaliteit afgemaakt.
+    - admin kan post aan en uit zetten.
 
 ## Donderdag 24-10-2025
 
@@ -58,13 +63,20 @@
 ## Maandag 13-10-2025
 
 - ERD gemaakt
-- Planning gemaakt
+- Planning gemaakt.
+    - Week 1: Basic pagina maken (zonder delete en edit)
+    - Week 2: Admin pagina, filter functie.
+    - Week 3: Crud pagina's afgemaakt en finishing touches.
 - User stories gemaakt
+    - Als gebruiker wil ik inloggen zodat ik nieuwe planten kan toevoegen en aanmaken
+    - als admin wil ik kunnen inloggen zodat ik nieuwe planten kan valideren
+    - als gebruiker wil ik nieuwe planten aankunnen maken, bewerken en verwijderen.
+    - als gebruiker wil ik door planten kunnen filteren zodat ik planten kan bekijken
 
 ![ERD](./img/ERD.png)
 
 ## Donderdag 9-10-2025
 
-- project aangemaakt
-- project op github gezet
+- project aangemaakt.
+- project op github gezet.
 
